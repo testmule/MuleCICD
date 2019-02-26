@@ -43,7 +43,7 @@
 					<businessGroup>personal</businessGroup>
 					<region>${cloudhub.region}</region>
 					<uri>${anypoint.uri}</uri>
-					<workerType>small</workerType>				
+					<workerType>small</workerType>
 				</configuration>
 				<executions>
 					<execution>
