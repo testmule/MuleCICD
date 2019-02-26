@@ -38,7 +38,7 @@
 					<uri>${anypoint.uri}</uri>
 					<workerType>small</workerType>
 				</configuration>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<id>deploy</id>
 						<phase>deploy</phase>
@@ -46,7 +46,7 @@
 							<goal>deploy</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 		</plugins>
 	</build>
