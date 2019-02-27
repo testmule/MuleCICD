@@ -19,7 +19,7 @@ pipeline{
     
     stage ('Smoke Test'){
  		steps {
- 			
+ 			script {
  				 sh "${CMD} > commandResult"
                  env.status = readFile('commandResult').trim()
                  sh "echo ${env.status}"
@@ -29,6 +29,7 @@ pipeline{
                     else {
                         currentBuild.result = "FAILURE"
                     }
+               }
  			}
  	    }
      }
