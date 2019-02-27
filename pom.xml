@@ -10,10 +10,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    	<app.runtime>4.1.4</app.runtime>
+		<app.runtime>4.1.4</app.runtime>
 		<mule.maven.plugin.version>3.1.6</mule.maven.plugin.version>
 	</properties>
-	
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -23,24 +23,24 @@
 			<id>ossrh</id>
 			<url>http://34.73.86.67:9081/repository/maven-releases/</url>
 		</repository>
-	</distributionManagement>	
-	
+	</distributionManagement>
+
 	<build>
-		<plugins>			
+		<plugins>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>${app.runtime}</muleVersion>
-					<username>${username}</username>
-					<password>${password}</password>
-					<applicationName>${artifactId}</applicationName>
-					<environment>${environment}</environment>
-					<businessGroup>personal</businessGroup>				
-					<workerType>small</workerType>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>${artifactId}</applicationName>
+						<environment>${environment}</environment>
+					</cloudHubDeployment>
 				</configuration>
 				<executions>
 					<execution>
@@ -48,11 +48,7 @@
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy</goal>
-						</goals>
-						<configuration>
-                            <domain>https://anypoint.mulesoft.com</domain>
-                            <maxWaitTime>180000</maxWaitTime>
-                        </configuration>
+						</goals>						
 					</execution>
 				</executions>
 			</plugin>
@@ -95,10 +91,10 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>	
-    <pluginRepository>
-        <id>mule-public</id>
-        <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-    </pluginRepository>
+		</pluginRepository>
+		<pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
 	</pluginRepositories>
 </project>
