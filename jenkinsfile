@@ -2,6 +2,8 @@ pipeline{
  agent any
  environment {
     ANYPOINT = credentials('Anypoint')
+    APP_URL = "http://mulecicd.us-e2.cloudhub.io/Test"
+    CMD = "curl --write-out %{http_code} --silent --output /dev/null ${APP_URL}"
  }
  stages {
  	stage ('Build'){
@@ -12,6 +14,22 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  				sh 'mvn -f pom.xml  deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Sandbox -DmuleDeploy'
+ 			}
+ 	    }
+     }
+    stage ('Smoke Test'){
+ 		steps {
+ 			script {
+ 				 sh "${CMD} > commandResult"
+                 env.status = readFile('commandResult').trim()
+                 sh "echo ${env.status}"
+                    if (env.status == '200') {
+                        currentBuild.result = "SUCCESS"
+                    }
+                    else {
+                        currentBuild.result = "FAILURE"
+                    }
+               }
  			}
  	    }
      }
