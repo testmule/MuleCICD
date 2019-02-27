@@ -16,11 +16,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-			<url>http://34.73.86.67:9081/repository/mule-cicd/</url>
+			<url>http://34.73.86.67:9081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<url>http://34.73.86.67:9081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>	
 	
