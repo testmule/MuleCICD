@@ -34,14 +34,12 @@
 				<extensions>true</extensions>
 				<configuration>
 					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>${mule.version}</muleVersion>
+					<muleVersion>${app.runtime}</muleVersion>
 					<username>${username}</username>
 					<password>${password}</password>
 					<applicationName>${artifactId}</applicationName>
 					<environment>${environment}</environment>
-					<businessGroup>personal</businessGroup>
-					<region>${cloudhub.region}</region>
-					<uri>${anypoint.uri}</uri>
+					<businessGroup>personal</businessGroup>				
 					<workerType>small</workerType>
 				</configuration>
 				<executions>
