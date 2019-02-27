@@ -4,6 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
 	<artifactId>MuleCICD</artifactId>
+	 <packaging>mule</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>MuleCICD</name>
 	<properties>
