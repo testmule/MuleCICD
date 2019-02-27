@@ -50,6 +50,16 @@
 							<goal>deploy</goal>
 						</goals>
 					</execution>
+					 <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>cloudhub-deploy</goal>
+                        </goals>
+                        <configuration>
+                            <domain>https://anypoint.mulesoft.com</domain>
+                            <maxWaitTime>180000</maxWaitTime>
+                        </configuration>
+                    </execution>
 				</executions>
 			</plugin>
 		</plugins>
