@@ -17,7 +17,7 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-			<url>http://34.73.86.67:9081/repository/mule-cicd/</url>
+			<url>http://34.73.86.67:9081/repository/MuleCICD/</url>
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>
