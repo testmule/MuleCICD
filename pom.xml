@@ -3,10 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>MuleCICD</artifactId>
+	<artifactId>testmule</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 	<name>MuleCICD</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -17,11 +18,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-				<url>http://34.73.86.67:9081/repository/maven-snapshots/</url>
+			<url>http://34.73.86.67:9081/repository/cicd-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>
-			<url>http://34.73.86.67:9081/repository/maven-releases/</url>
+			<url>http://34.73.86.67:9081/repository/cicd-releases/</url>
 		</repository>
 	</distributionManagement>
 
@@ -48,12 +49,13 @@
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy</goal>
-						</goals>						
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
@@ -68,6 +70,7 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
+
 	<repositories>
 		<repository>
 			<id>anypoint-exchange</id>
@@ -81,7 +84,12 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>maven-group</id>
+			<url>http://34.73.86.67:9081/repository/cicd-group/</url>
+		</repository>
 	</repositories>
+	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -97,4 +105,6 @@
 			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+
 </project>
